@@ -391,7 +391,7 @@ class _QEventLoop:
             raise RuntimeError("Event loop already running")
 
         self.__log_debug("Running %s until complete", future)
-        future = asyncio.ensure_future(future, loop=self)
+        future = asyncio.ensure_future(future)
 
         def stop(*args):
             self.stop()  # noqa
